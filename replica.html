@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/672409eb63.js" crossorigin="anonymous"></script>
+    <title>Fisheye - photographe </title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page" /></a>
+    </header>
+    <main id="main">
+    </main>
+    <div id="contact_modal">
+        <div class="modal">
+            <header>
+                <h2 id="contactMe">Contactez-moi</h2>
+                <img src="assets/icons/close.svg" onclick="closeModal()" />
+            </header>
+            <form>
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" />
+                    <label for="nom">Nom</label>
+                    <input id="nom" />
+                    <label for="email">Email</label>
+                    <input id="email" />
+                    <label for="message">Votre Message</label>
+                    <input id="message">
+                </div>
+                <button class="contact_button" onclick="consoleData(event)">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="sticky-encart">
+
+    </div>
+
+
+
+    <div id="lightbox" class="lightbox" tabindex="0">
+        <span class="close-lightbox" onclick="closeLightbox()" tabindex="0">&times;</span>
+        <img src="" class="lightbox-content" id="lightboxImage">
+        <video src="" class="lightbox-content" id="lightboxVideo" controls></video>
+        <a class="prev" tabindex="0" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" tabindex="0" onclick="moveSlide(1)">&#10095;</a>
+        <span id="ImageName"></span>
+    </div>
+
+
+
+
+    <script src="/scripts/pages/clone.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+
+</body>
+
+</html>
