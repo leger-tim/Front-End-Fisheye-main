@@ -216,8 +216,8 @@ async function main() {
                                     <div class="title-like">
                                       <h3>${title}</h3>
                                       <span id="likes-and-icon">
-                                        <p class="like-counter" data-liked="false" onclick='handleLikeClick(this)'>${likes}</p>
-                                        <i class="fa-solid fa-heart" id="heart" aria-label="likes"></i>
+                                      <p class="like-counter" data-liked="false" onclick='handleLikeClick(this)'>${likes}</p>
+                                      <i class="fa-solid fa-heart" data-liked="false" onclick='handleLikeClick(this)' id="heart" aria-label="likes"></i>
                                       </span>
                                     </div>
                                   </article>`;
@@ -230,8 +230,8 @@ async function main() {
                                     <div class="title-like">
                                       <h3>${title}</h3>
                                       <span id="likes-and-icon">
-                                        <p class="like-counter" data-liked="false" onclick='handleLikeClick(this)'>${likes}</p>
-                                        <i class="fa-solid fa-heart" id="heart" aria-label="likes"></i>
+                                      <p class="like-counter" data-liked="false" onclick='handleLikeClick(this)'>${likes}</p>
+                                      <i class="fa-solid fa-heart" data-liked="false" onclick='handleLikeClick(this)' id="heart" aria-label="likes"></i>
                                       </span>
                                     </div>
                                   </article>`;
@@ -281,7 +281,7 @@ function slider(event) {
         lightboxImage.style.display = "none";
       }
 
-      if (!e.target.classList.contains("like-counter")) {
+      if (!e.target.classList.contains("fa-heart")) {
         lightbox.style.display = "block";
       }
     });
@@ -379,13 +379,13 @@ function handleLikeClick(event) {
   }
 
   // Get the current number of likes from the clicked element
-  const currentLikes = parseInt(event.textContent, 10);
+  const currentLikes = parseInt(event.previousElementSibling.textContent, 10);
 
   // Increment the number of likes
   const newLikes = currentLikes + 1;
 
   // Update the displayed number of likes
-  event.textContent = newLikes;
+  event.previousElementSibling.textContent = newLikes;
 
   // Mark the media as liked
   event.setAttribute("data-liked", "true");
