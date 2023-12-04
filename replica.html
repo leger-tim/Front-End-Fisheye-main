@@ -20,7 +20,7 @@
         <div class="modal">
             <header>
                 <h2 id="contactMe">Contactez-moi</h2>
-                <img src="assets/icons/close.svg" onclick="closeModal()" />
+                <img src="assets/icons/close.svg" alt="close" id="closeModale" />
             </header>
             <form>
                 <div>
@@ -33,7 +33,7 @@
                     <label for="message">Votre Message</label>
                     <input id="message">
                 </div>
-                <button class="contact_button" onclick="consoleData(event)">Envoyer</button>
+                <button class="contact_button">Envoyer</button>
             </form>
         </div>
     </div>
@@ -46,11 +46,11 @@
 
 
     <div id="lightbox" class="lightbox" tabindex="0">
-        <span class="close-lightbox" onclick="closeLightbox()" tabindex="0">&times;</span>
-        <img src="" class="lightbox-content" id="lightboxImage">
+        <span class="close-lightbox"  tabindex="0">&times;</span>
+        <img src="" alt="random" class="lightbox-content" id="lightboxImage">
         <video src="" class="lightbox-content" id="lightboxVideo" controls></video>
-        <a class="prev" tabindex="0" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" tabindex="0" onclick="moveSlide(1)">&#10095;</a>
+        <a class="prev" tabindex="0" >&#10094;</a>
+        <a class="next" tabindex="0" >&#10095;</a>
         <span id="ImageName"></span>
     </div>
 

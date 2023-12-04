@@ -91,7 +91,17 @@ async function main() {
     .querySelector("#main")
     .insertAdjacentHTML("beforeend", photographerDetailsHtml);
 
-  sortDropdown = `<span  class="container-trier-par"><p class="p-trier-par">Trier Par</p><span class="span-trier-par"><div class="dropdown-top"><button tabIndex="0" class="dropbtn"><div class="date-text-container"><span>Date</span></div><img src="/assets/icons/vector.png" alt="Flèche" class="arrow-position rotate-arrow"></button><div id="myDropdown" class="dropdown-content dropdown"><hr class="custom-hr-class"><a href="#" class="link-drop">Popularité</a><hr class="custom-hr-class"><a href="#" class="link-drop">Titre</a></div></div></span></span>`;
+  sortDropdown = `<span  class="container-trier-par"><p class="p-trier-par">Trier Par</p>
+  <span class="span-trier-par"><div class="dropdown-top"><button tabIndex="0" class="dropbtn">
+  <div class="date-text-container"><span>Date</span></div>
+  <span class="chevron-down">  <i class="fa-solid fa-chevron-down"></i>
+  </span>
+  <span class="chevron-up">  <i class="fa-solid fa-chevron-up"></i>
+  </span> 
+  </button><div id="myDropdown" class="dropdown-content dropdown">
+  <hr class="custom-hr-class"><a href="#" class="link-drop">Popularité</a>
+  <hr class="custom-hr-class"><a href="#" class="link-drop">Titre</a></div></div></span>
+  </span>`;
 
   document.querySelector("#main").insertAdjacentHTML("beforeend", sortDropdown);
 
@@ -110,9 +120,18 @@ async function main() {
   dropdownButton.addEventListener("click", (e) => {
     const dateTextContainer = document.querySelector(".date-text-container");
     const dropdownMenu = document.querySelector("#myDropdown");
-    const rotateArrow = document.querySelector(".rotate-arrow");
+    const chevronDown = document.querySelector(".chevron-down");
+    const chevronUp = document.querySelector(".chevron-up");
     dropdownMenu.classList.toggle("show");
-    rotateArrow.classList.toggle("rotate");
+
+    if (dropdownMenu.classList.contains("show")) {
+      chevronDown.style.display = "none";
+      chevronUp.style.display = "block";
+    } else {
+      chevronDown.style.display = "block";
+      chevronUp.style.display = "none";
+    }
+
     let option = "";
     if (e.target.classList.contains("link-drop")) {
       var previousValue = dateTextContainer.textContent;
