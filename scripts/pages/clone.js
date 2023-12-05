@@ -206,8 +206,7 @@ async function main() {
     articles = "";
     selectedSortingArray.map(
       (
-        { id, photographerId, title, image, video, likes, date, price },
-        index
+        {title, image, video, likes},
       ) => {
         if (image) {
           // Handle image
